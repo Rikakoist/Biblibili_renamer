@@ -10,6 +10,11 @@ namespace Bilibili_batch_rename
 {
     class Common
     {
+        /// <summary>
+        /// 迭代获取目录。
+        /// </summary>
+        /// <param name="RootDir">根目录。</param>
+        /// <param name="DirList">获取的目录列表。</param>
         public static void GetAllDir(string RootDir, ref List<string> DirList)
         {
             if (!Directory.Exists(RootDir))
@@ -23,6 +28,11 @@ namespace Bilibili_batch_rename
             }
         }
 
+        /// <summary>
+        /// 重命名方法。
+        /// </summary>
+        /// <param name="dir">视频文件存放的文件夹。</param>
+        /// <returns>重命名操作是否成功。</returns>
         public static bool Rename(string dir)
         {
             if (!Directory.Exists(dir))
@@ -46,6 +56,11 @@ namespace Bilibili_batch_rename
             return true;
         }
 
+        /// <summary>
+        /// 从JSON获取视频名称。
+        /// </summary>
+        /// <param name="JsonPath">JSON文件的完整路径。</param>
+        /// <returns>获取的文件名。若获取失败返回空。</returns>
         private static string GetVidName(string JsonPath)
         {
             try
